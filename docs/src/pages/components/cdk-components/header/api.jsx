@@ -10,7 +10,7 @@ const headerPropsTable = () => {
         <th>Description</th>
       </tr>
       <tr>
-        <td>underlined: boolean</td>
+        <td>underline: boolean</td>
         <td>
           <code>false</code>
         </td>

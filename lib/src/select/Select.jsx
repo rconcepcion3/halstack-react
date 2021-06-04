@@ -244,6 +244,7 @@ const DxcSelect = ({
                 vertical: "bottom",
                 horizontal: "left",
               },
+              disableScrollLock: true,
             }}
             inputProps={{ tabIndex: disabled ? -1 : tabIndex }}
           >
@@ -363,6 +364,10 @@ const ListIconContainer = styled.div`
 `;
 
 const SelectContainer = styled.div`
+  body {
+    overflow: inherit !important;
+  }
+
   width: ${(props) => calculateWidth(props.margin, props.size)};
   margin: ${(props) => (props.margin && typeof props.margin !== "object" ? spaces[props.margin] : "0px")};
   margin-top: ${(props) =>

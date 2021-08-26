@@ -87,7 +87,7 @@ const DXCSpinner = styled.div`
     props.margin && typeof props.margin === "object" && props.margin.left ? spaces[props.margin.left] : ""};
 
   .MuiCircularProgress-colorPrimary {
-    color: ${(props) => props.theme.trackCircleColor};
+    color: ${(props) => (props.mode === "overlay" ? props.theme.trackCircleColorOnDark : props.theme.trackCircleColor)};
     width: ${(props) => (props.mode === "small" && "44px !important") || "141px !important"};
     height: ${(props) => (props.mode === "small" && "44px !important") || "141px !important"};
     margin-top: ${(props) =>
@@ -122,8 +122,6 @@ const SpinnerLabel = styled.div`
   font-style: ${(props) => (props.mode === "overlay" ? props.theme.overlayLabelFontStyle : props.theme.labelFontStyle)};
   margin-top: ${(props) => (props.showValue === false && "52px") || "45px"};
   color: ${(props) => (props.mode === "overlay" ? props.theme.overlayLabelFontColor : props.theme.labelFontColor)};
-  text-transform: ${(props) =>
-    props.mode === "overlay" ? props.theme.overlayLabelFontTextTransform : props.theme.labelFontTextTransform};
   text-align: ${(props) => (props.mode === "overlay" ? props.theme.overlayLabelTextAlign : props.theme.labelTextAlign)};
   letter-spacing: ${(props) =>
     props.mode === "overlay" ? props.theme.overlayLabelLetterSpacing : props.theme.labelLetterSpacing};

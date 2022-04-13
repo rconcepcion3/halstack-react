@@ -1,27 +1,75 @@
+//@ts-nocheck
 import React from "react";
 import styled from "styled-components";
 import DxcStack from "../stack/Stack";
 import DxcText from "../text/Text";
 import ListPropsType from "./types";
 
-function List({ children, type = "disc", gutter = "xxsmall" }: ListPropsType): JSX.Element {
+const getBulletSize = (size: string) => {
+  switch (size) {
+    case "xsmall":
+      return "3px";
+    case "small":
+      return "4px";
+    case "standard":
+      return "5px";
+    case "large":
+      return "6px";
+  }
+};
+const getTextSize = (size: string) => {
+  switch (size) {
+    case "xsmall":
+      return "0.75rem";
+    case "small":
+      return "0.875rem";
+    case "standard":
+      return "1rem";
+    case "large":
+      return "1.25rem";
+    default:
+      return "1rem";
+  }
+};
+const getHeight = (size: string) => {
+  return size && 1.5 * getTextSize(size).slice(0, -3);
+};
+function List({
+  children,
+  type = "disc",
+  gutter = "xxsmall",
+  icon = "",
+  size = "standard",
+}: ListPropsType): JSX.Element {
   return (
     <DxcStack as={type === "number" ? "ol" : "ul"} gutter={gutter}>
       {React.Children.map(children, (child, index) => {
         return (
-          <ListItem>
-            {type === "number" ? (
-              <Number>
-                <DxcText>{index + 1}.</DxcText>
-              </Number>
-            ) : type === "square" ? (
-              <Square></Square>
-            ) : type === "circle" ? (
-              <Circle></Circle>
-            ) : (
-              <Disc></Disc>
-            )}
-            {child}
+          <ListItem size={size}>
+            <GeneralContent>
+              {type === "number" ? (
+                <Number>
+                  <DxcText size={size}>{index + 1}.</DxcText>
+                </Number>
+              ) : type === "square" ? (
+                <Bullet size={size}>
+                  <Square size={size}></Square>
+                </Bullet>
+              ) : type === "circle" ? (
+                <Bullet size={size}>
+                  <Circle size={size}></Circle>
+                </Bullet>
+              ) : type === "icon" ? (
+                <Bullet size={size}>
+                  <Icon size={size}>{icon}</Icon>
+                </Bullet>
+              ) : (
+                <Bullet size={size}>
+                  <Disc size={size}></Disc>
+                </Bullet>
+              )}
+              {type ? React.cloneElement(child, { size }) : { child }}
+            </GeneralContent>
           </ListItem>
         );
       })}
@@ -29,47 +77,77 @@ function List({ children, type = "disc", gutter = "xxsmall" }: ListPropsType): J
   );
 }
 
+const Bullet = styled.div<ListPropsType>`
+  display: flex;
+  align-self: flex-start;
+  min-width: 10;
+  align-items: center;
+  height: ${(props) => `${getHeight(props.size)}rem`};
+`;
+
+const GeneralContent = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+`;
+
+const Icon = styled.div`
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  align-content: center;
+`;
 const Number = styled.div`
   user-select: none;
   margin-right: 10px;
-  flex-shrink: 0;
+  display: flex;
+  box-sizing: border-box;
+  align-self: flex-start;
+  min-width: 0;
 `;
 
-const Square = styled.div`
+const Square = styled.div<ListPropsType>`
   background-color: black;
-  width: 5px;
-  height: 5px;
-  flex-shrink: 0;
-  margin-top: 10px;
+  width: ${(props) => getBulletSize(props.size)};
+  height: ${(props) => getBulletSize(props.size)};
   margin-right: 10px;
 `;
 
-const Circle = styled.div`
-  width: 5px;
-  height: 5px;
+const Circle = styled.div<ListPropsType>`
+  width: ${(props) => getBulletSize(props.size)};
+  height: ${(props) => getBulletSize(props.size)};
   border-radius: 50%;
   border: 1px solid black;
-  flex-shrink: 0;
-  margin-top: 10px;
   margin-right: 10px;
-  box-sizing: border-box;
 `;
 
-const Disc = styled.div`
+const Disc = styled.div<ListPropsType>`
   background-color: black;
-  width: 5px;
-  height: 5px;
+  width: ${(props) => getBulletSize(props.size)};
+  height: ${(props) => getBulletSize(props.size)};
   border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 10px;
   margin-right: 10px;
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.li<ListPropsType>`
   margin: 0px;
   padding: 0px;
   list-style: none;
   display: flex;
+  font-size: ${({ size }) => {
+    switch (size) {
+      case "xsmall":
+        return "0.75rem";
+      case "small":
+        return "0.875rem";
+      case "standard":
+        return "1rem";
+      case "large":
+        return "1.25rem";
+      default:
+        return "1rem";
+    }
+  }};
 `;
 
 export default List;

@@ -1,3 +1,5 @@
+type SVG = React.SVGProps<SVGSVGElement> | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+
 type Props = {
   children: React.ReactNode;
   gutter?:
@@ -11,6 +13,8 @@ type Props = {
     | "xlarge"
     | "xxlarge"
     | "xxxlarge";
-  type?: "disc" | "circle" | "square" | "number";
+  type?: "disc" | "circle" | "square" | "number" | "icon";
+  icon?: string | SVG;
+  size?: "xsmall" | "small" | "standard" | "large";
 };
 export default Props;

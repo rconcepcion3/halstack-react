@@ -31,6 +31,22 @@ const getTextSize = (size: string) => {
       return "1rem";
   }
 };
+
+const getIconSize = (size: string) => {
+  switch (size) {
+    case "xsmall":
+      return "1rem";
+    case "small":
+      return "1.125rem";
+    case "standard":
+      return "1.5rem";
+    case "large":
+      return "1.75rem";
+    default:
+      return "1rem";
+  }
+};
+
 const getHeight = (size: string) => {
   return size && 1.5 * getTextSize(size).slice(0, -3);
 };
@@ -80,7 +96,6 @@ function List({
 const Bullet = styled.div<ListPropsType>`
   display: flex;
   align-self: flex-start;
-  min-width: 10;
   align-items: center;
   height: ${(props) => `${getHeight(props.size)}rem`};
 `;
@@ -92,14 +107,20 @@ const GeneralContent = styled.div`
 `;
 
 const Icon = styled.div`
-  height: 24px;
-  width: 24px;
-  margin-right: 10px;
+  height: ${(props) => `${getHeight(props.size)}rem`};
+  width: auto;
+  margin-right: 0.5rem;
   align-content: center;
+
+  & > svg {
+    height: ${(props) => getIconSize(props.size)};
+    width: ${(props) => getIconSize(props.size)};
+  }
 `;
+
 const Number = styled.div`
   user-select: none;
-  margin-right: 10px;
+  margin-right: 0.5rem;
   display: flex;
   box-sizing: border-box;
   align-self: flex-start;
@@ -110,7 +131,7 @@ const Square = styled.div<ListPropsType>`
   background-color: black;
   width: ${(props) => getBulletSize(props.size)};
   height: ${(props) => getBulletSize(props.size)};
-  margin-right: 10px;
+  margin-right: 0.5rem;
 `;
 
 const Circle = styled.div<ListPropsType>`
@@ -118,7 +139,7 @@ const Circle = styled.div<ListPropsType>`
   height: ${(props) => getBulletSize(props.size)};
   border-radius: 50%;
   border: 1px solid black;
-  margin-right: 10px;
+  margin-right: 0.5rem;
 `;
 
 const Disc = styled.div<ListPropsType>`
@@ -126,7 +147,7 @@ const Disc = styled.div<ListPropsType>`
   width: ${(props) => getBulletSize(props.size)};
   height: ${(props) => getBulletSize(props.size)};
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 0.5rem;
 `;
 
 const ListItem = styled.li<ListPropsType>`

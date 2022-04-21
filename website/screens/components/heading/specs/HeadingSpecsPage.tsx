@@ -346,7 +346,7 @@ const HeaderSpecsPage = () => {
         </DxcTable>
       </DxcStack>
       <DxcStack gutter="large">
-        <HeadingLink level={3}>Accesibility</HeadingLink>
+        <HeadingLink level={3}>Accessibility</HeadingLink>
         <DxcList>
           <DxcText>
             Heading components should be in order. That means an{" "}

@@ -124,7 +124,7 @@ const TextareaSpecsPage = () => {
         </DxcTable>
       </DxcStack>
       <DxcStack gutter="large">
-        <HeadingLink level={3}>Accesibility</HeadingLink>
+        <HeadingLink level={3}>Accessibility</HeadingLink>
         <HeadingLink level={4}>WCAG</HeadingLink>
         <DxcList>
           <DxcText>

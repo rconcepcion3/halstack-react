@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { DxcStack } from "@dxc-technology/halstack-react";
 import HeadingLink from "./HeadingLink";
 
 type SectionType = {
   title: string;
-  level?: 1 | 2 | 3 | 4 | 5 | number;
+  level: 1 | 2 | 3 | 4 | 5;
   subSections?: SectionType[];
   content?: React.ReactNode;
   children?: React.ReactNode;
@@ -16,21 +16,21 @@ const Section = ({
   level,
   children,
 }: SectionType): JSX.Element => {
-  // let subLevel = level && level + 1;
-
   const getSubSections = (subSections: SectionType[]) => {
     const finalSubsections: SectionType[] = [];
     subSections.map((subSection) => {
       finalSubsections.push({
         title: subSection.title,
-        content: subSection.content,
-        // level: subLevel,
+        content: subSection.content && subSection.content,
+        level: level + 1,
       });
 
       if (subSection.subSections) {
-        // subLevel && subLevel++;
         const result = getSubSections(subSection.subSections);
-        result.map((item) => finalSubsections.push(item));
+        result.map((item) => {
+          item.level++;
+          finalSubsections.push(item);
+        });
       }
     });
     return finalSubsections;

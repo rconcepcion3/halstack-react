@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useMemo, useCallback } from "react";
 import styled from "styled-components";
 import { DxcQuickNav, DxcStack } from "@dxc-technology/halstack-react";
 import PageLayout from "./PageLayout";
@@ -13,6 +13,7 @@ type DocContainerTypes = {
 
 type SectionType = {
   title: string;
+  level: 1 | 2 | 3 | 4 | 5;
   content?: React.ReactNode;
   subSections?: SectionType[];
 };

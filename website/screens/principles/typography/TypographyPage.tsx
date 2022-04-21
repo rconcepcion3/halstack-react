@@ -922,181 +922,181 @@ const sections = [
               },
             ],
           },
+          {
+            title: "Additional styles",
+            content: (
+              <Figure caption="Additional caption and overline styles">
+                <Image
+                  src={additionalTypes}
+                  alt="Additional caption and overline styles"
+                />
+              </Figure>
+            ),
+            subSections: [
+              {
+                title: "caption",
+                content: (
+                  <DxcTable>
+                    <thead>
+                      <tr>
+                        <th>Property</th>
+                        <th>Core token</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <Code>font-family</Code>
+                        </td>
+                        <td>
+                          <Code>font-family-sans</Code>
+                        </td>
+                        <td>&#39;Open Sans&#39;, sans-serif</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>font-weight</Code>
+                        </td>
+                        <td>
+                          <Code>font-weight-regular</Code>
+                        </td>
+                        <td>400</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>font-size</Code>
+                        </td>
+                        <td>
+                          <Code>font-scale-01</Code>
+                        </td>
+                        <td>0.75rem / 12px</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>font-style</Code>
+                        </td>
+                        <td>
+                          <Code>font-style-italic</Code>
+                        </td>
+                        <td>italic</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>text-transform</Code>
+                        </td>
+                        <td>
+                          <Code>font-transform-initial</Code>
+                        </td>
+                        <td>initial</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>letter-spacing</Code>
+                        </td>
+                        <td>
+                          <Code>font-tracking-normal</Code>
+                        </td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>line-height</Code>
+                        </td>
+                        <td>
+                          <Code>font-leading-normal</Code>
+                        </td>
+                        <td>1.5em</td>
+                      </tr>
+                    </tbody>
+                  </DxcTable>
+                ),
+              },
+              {
+                title: "overline",
+                content: (
+                  <DxcTable>
+                    <thead>
+                      <tr>
+                        <th>Property</th>
+                        <th>Core token</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <Code>font-family</Code>
+                        </td>
+                        <td>
+                          <Code>font-family-sans</Code>
+                        </td>
+                        <td>&#39;Open Sans&#39;, sans-serif</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>font-weight</Code>
+                        </td>
+                        <td>
+                          <Code>font-weight-regular</Code>
+                        </td>
+                        <td>400</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>font-size</Code>
+                        </td>
+                        <td>
+                          <Code>font-scale-02</Code>
+                        </td>
+                        <td>0.875rem / 14px</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>font-style</Code>
+                        </td>
+                        <td>
+                          <Code>font-style-italic</Code>
+                        </td>
+                        <td>italic</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>text-transform</Code>
+                        </td>
+                        <td>
+                          <Code>font-transform-uppercase</Code>
+                        </td>
+                        <td>uppercase</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>letter-spacing</Code>
+                        </td>
+                        <td>
+                          <Code>font-tracking-wide-02</Code>
+                        </td>
+                        <td>0.05em</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Code>line-height</Code>
+                        </td>
+                        <td>
+                          <Code>font-leading-normal</Code>
+                        </td>
+                        <td>1.5em</td>
+                      </tr>
+                    </tbody>
+                  </DxcTable>
+                ),
+              },
+            ],
+          },
         ],
       },
       {
-        title: "Additional styles",
-        content: (
-          <Figure caption="Additional caption and overline styles">
-            <Image
-              src={additionalTypes}
-              alt="Additional caption and overline styles"
-            />
-          </Figure>
-        ),
-        subSections: [
-          {
-            title: "caption",
-            content: (
-              <DxcTable>
-                <thead>
-                  <tr>
-                    <th>Property</th>
-                    <th>Core token</th>
-                    <th>Value</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <Code>font-family</Code>
-                    </td>
-                    <td>
-                      <Code>font-family-sans</Code>
-                    </td>
-                    <td>&#39;Open Sans&#39;, sans-serif</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>font-weight</Code>
-                    </td>
-                    <td>
-                      <Code>font-weight-regular</Code>
-                    </td>
-                    <td>400</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>font-size</Code>
-                    </td>
-                    <td>
-                      <Code>font-scale-01</Code>
-                    </td>
-                    <td>0.75rem / 12px</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>font-style</Code>
-                    </td>
-                    <td>
-                      <Code>font-style-italic</Code>
-                    </td>
-                    <td>italic</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>text-transform</Code>
-                    </td>
-                    <td>
-                      <Code>font-transform-initial</Code>
-                    </td>
-                    <td>initial</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>letter-spacing</Code>
-                    </td>
-                    <td>
-                      <Code>font-tracking-normal</Code>
-                    </td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>line-height</Code>
-                    </td>
-                    <td>
-                      <Code>font-leading-normal</Code>
-                    </td>
-                    <td>1.5em</td>
-                  </tr>
-                </tbody>
-              </DxcTable>
-            ),
-          },
-          {
-            title: "overline",
-            content: (
-              <DxcTable>
-                <thead>
-                  <tr>
-                    <th>Property</th>
-                    <th>Core token</th>
-                    <th>Value</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <Code>font-family</Code>
-                    </td>
-                    <td>
-                      <Code>font-family-sans</Code>
-                    </td>
-                    <td>&#39;Open Sans&#39;, sans-serif</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>font-weight</Code>
-                    </td>
-                    <td>
-                      <Code>font-weight-regular</Code>
-                    </td>
-                    <td>400</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>font-size</Code>
-                    </td>
-                    <td>
-                      <Code>font-scale-02</Code>
-                    </td>
-                    <td>0.875rem / 14px</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>font-style</Code>
-                    </td>
-                    <td>
-                      <Code>font-style-italic</Code>
-                    </td>
-                    <td>italic</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>text-transform</Code>
-                    </td>
-                    <td>
-                      <Code>font-transform-uppercase</Code>
-                    </td>
-                    <td>uppercase</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>letter-spacing</Code>
-                    </td>
-                    <td>
-                      <Code>font-tracking-wide-02</Code>
-                    </td>
-                    <td>0.05em</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Code>line-height</Code>
-                    </td>
-                    <td>
-                      <Code>font-leading-normal</Code>
-                    </td>
-                    <td>1.5em</td>
-                  </tr>
-                </tbody>
-              </DxcTable>
-            ),
-          },
-        ],
-      },
-      {
-        title: "Accesibility",
+        title: "Accessibility",
         subSections: [
           {
             title: "WCAG",

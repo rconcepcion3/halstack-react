@@ -1,5 +1,4 @@
 import { DxcList, DxcStack, DxcText } from "@dxc-technology/halstack-react";
-import HeadingLink from "../../../common/HeadingLink";
 import accordionPlacement from "./images/accordion_placement.png";
 import accordionAlignment from "./images/accordion_alignment.png";
 import accordionBehavior from "./images/accordion_behavior.png";

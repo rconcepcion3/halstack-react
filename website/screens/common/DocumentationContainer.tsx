@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useMemo, useCallback } from "react";
 import styled from "styled-components";
 import { DxcQuickNav, DxcStack } from "@dxc-technology/halstack-react";
@@ -28,34 +29,25 @@ const DocumentationContainer = ({
 }: DocContainerTypes): JSX.Element => {
   const getSubSectionsLinks = useCallback((section) => {
     const linksList: Link[] = [];
-    if (section.subSections) {
-      section.subSections?.map((subSection: SectionType) => {
-        if (subSection.subSections) {
-          linksList.push({
-            label: subSection.title,
-            links: getSubSectionsLinks(subSection),
-          });
-        } else {
-          linksList.push({
-            label: subSection.title,
-          });
-        }
-      });
-    } else {
-      linksList.push({ label: section.title });
-    }
+    section.subSections?.map((subSection: SectionType) => {
+      if (subSection.subSections) {
+        linksList.push({
+          label: subSection.title,
+          links: getSubSectionsLinks(subSection),
+        });
+      } else {
+        linksList.push({
+          label: subSection.title,
+        });
+      }
+    });
     return linksList;
   }, []);
 
-  const getQuickNavLinks = useCallback(() => {
-    let linksList: Link[] = [];
-    linksList = getSubSectionsLinks(section);
-
-    return linksList;
-  }, [section, getSubSectionsLinks]);
-
-  const links = useMemo(() => getQuickNavLinks(), [getQuickNavLinks]);
-
+  const links = useMemo(
+    () => getSubSectionsLinks(section),
+    [getSubSectionsLinks, section]
+  );
   return (
     <Container>
       <PageLayout>

@@ -6,14 +6,13 @@ import DocFooter from "./DocFooter";
 import Section from "./Section";
 
 type DocContainerTypes = {
-  title: string;
-  sections: SectionType[];
+  section: SectionType;
   githubLink: string;
 };
 
 type SectionType = {
   title: string;
-  level: 1 | 2 | 3 | 4 | 5;
+  level?: 1 | 2 | 3 | 4 | 5;
   content?: React.ReactNode;
   subSections?: SectionType[];
 };
@@ -24,8 +23,7 @@ type Link = {
 };
 
 const DocumentationContainer = ({
-  title,
-  sections,
+  section,
   githubLink,
 }: DocContainerTypes): JSX.Element => {
   const getSubSectionsLinks = useCallback((section) => {
@@ -51,12 +49,10 @@ const DocumentationContainer = ({
 
   const getQuickNavLinks = useCallback(() => {
     let linksList: Link[] = [];
-    sections.map((section) => {
-      linksList = getSubSectionsLinks(section);
-    });
+    linksList = getSubSectionsLinks(section);
 
     return linksList;
-  }, [sections, getSubSectionsLinks]);
+  }, [section, getSubSectionsLinks]);
 
   const links = useMemo(() => getQuickNavLinks(), [getQuickNavLinks]);
 
@@ -65,24 +61,20 @@ const DocumentationContainer = ({
       <PageLayout>
         <ContentContainer>
           <DxcStack gutter="xxxlarge">
-            {sections.map((section, index) => {
-              return (
-                <Section
-                  title={section.title}
-                  subSections={section.subSections}
-                  level={index + 1}
-                  key={`section-${section.title}`}
-                >
-                  {section.content}
-                </Section>
-              );
-            })}
+            <Section
+              title={section.title}
+              subSections={section.subSections}
+              level={1}
+              key={`section-${section.title}`}
+            >
+              {section.content}
+            </Section>
             <DocFooter githubLink={githubLink} />
           </DxcStack>
         </ContentContainer>
       </PageLayout>
       <QuickNavContainer>
-        <DxcQuickNav title={title} links={links}></DxcQuickNav>
+        <DxcQuickNav title={section.title} links={links}></DxcQuickNav>
       </QuickNavContainer>
     </Container>
   );

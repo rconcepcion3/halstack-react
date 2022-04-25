@@ -239,10 +239,31 @@ export const Chromatic = () => (
     </Container>
     <Container>
       <Title title="Icon" theme="light" level={4} />
+      <DxcList type="icon" icon={icon} size="xsmall">
+        <DxcText>
+          XSMALL Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.
+        </DxcText>
+        <DxcText>Text 2.</DxcText>
+      </DxcList>
+      <DxcList type="icon" icon={icon} size="small">
+        <DxcText>
+          SMALL Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.
+        </DxcText>
+        <DxcText>Text 2.</DxcText>
+      </DxcList>
+      <DxcList type="icon" icon={icon} size="standard">
+        <DxcText>
+          STANDARD Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et dolore magna aliqua.
+        </DxcText>
+        <DxcText>Text 2.</DxcText>
+      </DxcList>
       <DxcList type="icon" icon={icon} size="large">
         <DxcText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          LARGE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.
         </DxcText>
         <DxcText>Text 2.</DxcText>
       </DxcList>

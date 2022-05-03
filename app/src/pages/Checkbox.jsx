@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   DxcCheckbox,
-  ThemeProvider,
+  HalstackProvider,
   BackgroundColorProvider,
 } from "@dxc-technology/halstack-react";
 import styled from "styled-components";
@@ -77,14 +77,14 @@ function App() {
           disabled
         />
       </div>
-      <div className="test-case" id="required-checkbox">
-        <h4>Required checkbox</h4>
+      <div className="test-case" id="optional-checkbox">
+        <h4>Optional checkbox</h4>
         <DxcCheckbox
           checked={checked}
           label="Checkbox"
           onChange={onChange}
           labelPosition="after"
-          required={true}
+          optional
         />
       </div>
       <div>
@@ -265,7 +265,7 @@ function App() {
       </div>
       <div className="test-case" id="custom-colors">
         <h4>Custom Checkbox</h4>
-        <ThemeProvider theme={colors}>
+        <HalstackProvider theme={colors}>
           <DxcCheckbox
             checked={checked}
             label="Checkbox "
@@ -278,7 +278,7 @@ function App() {
             onChange={onChange}
           />
           <DxcCheckbox checked disabled label="Checkbox " onChange={onChange} />
-        </ThemeProvider>
+        </HalstackProvider>
       </div>
       <div>
         <h4>Dark</h4>

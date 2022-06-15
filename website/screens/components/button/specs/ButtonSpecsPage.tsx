@@ -12,6 +12,7 @@ import Code from "@/common/Code";
 import Figure from "@/common/Figure";
 import Image from "@/common/Image";
 import buttonSpecsImage from "./images/button_specs.png";
+import onDarkbuttonSpecsImage from "./images/onDark_button_states.png";
 import buttonStatesImage from "./images/button_states.png";
 import buttonAnatomyImage from "./images/button_anatomy.png";
 
@@ -43,6 +44,9 @@ const sections = [
         </DxcText>
         <Figure caption="Button component states">
           <Image src={buttonStatesImage} alt="Button component states" />
+        </Figure>
+        <Figure caption="Dark Mode: Buttom component states">
+          <Image src={onDarkbuttonSpecsImage} alt="Button component states" />
         </Figure>
       </>
     ),
@@ -434,6 +438,93 @@ const sections = [
             ),
           },
           {
+            title: "Color (Dark Mode)",
+            content: (
+              <DxcTable>
+                <thead>
+                  <tr>
+                    <th>Component token</th>
+                    <th>Element</th>
+                    <th>Token</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <Code>primaryBackgroundColor</Code>
+                    </td>
+                    <td>Button container</td>
+                    <td>
+                      <Code>color-purple-701</Code>
+                    </td>
+                    <td>#c0a5e4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>primaryFontColor</Code>
+                    </td>
+                    <td>Label</td>
+                    <td>
+                      <Code>color-purple-51</Code>
+                    </td>
+                    <td>#0c0515</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>primaryHoverBackgroundColor</Code>
+                    </td>
+                    <td>Container fill:hover</td>
+                    <td>
+                      <Code>color-purple-801</Code>
+                    </td>
+                    <td>#d8c1f1</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>primaryActiveBackgroundColor</Code>
+                    </td>
+                    <td>Container fill:active</td>
+                    <td>
+                      <Code>color-purple-200</Code>
+                    </td>
+                    <td>#e5d5f6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>primaryDisabledBackgroundColor</Code>
+                    </td>
+                    <td>Container fill:disabled</td>
+                    <td>
+                      <Code>color-grey-101</Code>
+                    </td>
+                    <td>#1a1a1a</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>primaryDisabledFontColor</Code>
+                    </td>
+                    <td>Label:disabled</td>
+                    <td>
+                      <Code>color-grey-401</Code>
+                    </td>
+                    <td>#595959</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>primaryFocusBorderColor</Code>
+                    </td>
+                    <td>Container border:focus</td>
+                    <td>
+                      <Code>color-blue-700</Code>
+                    </td>
+                    <td>#0086e6</td>
+                  </tr>
+                </tbody>
+              </DxcTable>
+            ),
+          },
+          {
             title: "Border",
             content: (
               <DxcTable>
@@ -650,6 +741,123 @@ const sections = [
             ),
           },
           {
+            title: "Color (Dark Mode)",
+            content: (
+              <DxcTable>
+                <thead>
+                  <tr>
+                    <th>Component token</th>
+                    <th>Element</th>
+                    <th>Token</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <Code>secondaryBackgroundColor</Code>
+                    </td>
+                    <td>Container fill</td>
+                    <td>
+                      <Code>transparent</Code>
+                    </td>
+                    <td>transparent</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryFontColor</Code>
+                    </td>
+                    <td>Label</td>
+                    <td>
+                      <Code>color-purple-701</Code>
+                    </td>
+                    <td>#c0a5e4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryBorderColor</Code>
+                    </td>
+                    <td>Container border</td>
+                    <td>
+                      <Code>color-purple-701</Code>
+                    </td>
+                    <td>#c0a5e4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryHoverBackgroundColor</Code>
+                    </td>
+                    <td>Container fill:hover</td>
+                    <td>
+                      <Code>color-purple-801</Code>
+                    </td>
+                    <td>#d8c1f1</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryHoverFontColor</Code>
+                    </td>
+                    <td>Label:hover</td>
+                    <td>
+                      <Code>color-purple-51</Code>
+                    </td>
+                    <td>#0c0515</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryActiveBackgroundColor</Code>
+                    </td>
+                    <td>Container fill:active</td>
+                    <td>
+                      <Code>color-purple-200</Code>
+                    </td>
+                    <td>#e5d5f6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryDisabledBackgroundColor</Code>
+                    </td>
+                    <td>Container fill:disabled</td>
+                    <td>
+                      <Code>color-transparent</Code>
+                    </td>
+                    <td>transparent</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryDisabledFontColor</Code>
+                    </td>
+                    <td>Label:disabled</td>
+                    <td>
+                      <Code>color-grey-401</Code>
+                    </td>
+                    <td>#595959</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryFocusBorderColor</Code>
+                    </td>
+                    <td>Container border:focus</td>
+                    <td>
+                      <Code>color-blue-700</Code>
+                    </td>
+                    <td>#0086e6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>secondaryDisabledBorderColor</Code>
+                    </td>
+                    <td>Container border:disabled</td>
+                    <td>
+                      <Code>color-grey-401</Code>
+                    </td>
+                    <td>#595959</td>
+                  </tr>
+                </tbody>
+              </DxcTable>
+            ),
+          },
+          {
             title: "Border",
             content: (
               <DxcTable>
@@ -831,6 +1039,93 @@ const sections = [
                     <Code>color-blue-600</Code>
                   </td>
                   <td>#0095ff</td>
+                </tr>
+              </DxcTable>
+            ),
+          },
+          {
+            title: "Color (Dark Mode)",
+            content: (
+              <DxcTable>
+                <thead>
+                  <tr>
+                    <th>Component token</th>
+                    <th>Element</th>
+                    <th>Token</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <Code>textBackgroundColor</Code>
+                    </td>
+                    <td>Container fill</td>
+                    <td>
+                      <Code>color-transparent</Code>
+                    </td>
+                    <td>transparent</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Code>textFontColor</Code>
+                    </td>
+                    <td>Label</td>
+                    <td>
+                      <Code>color-purple-701</Code>
+                    </td>
+                    <td>#c0a5e4</td>
+                  </tr>
+                </tbody>
+                <tr>
+                  <td>
+                    <Code>textHoverBackgroundColor</Code>
+                  </td>
+                  <td>Container fill:hover</td>
+                  <td>
+                    <Code>color-purple-801</Code>
+                  </td>
+                  <td>#d8c1f1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>textActiveBackgroundColor</Code>
+                  </td>
+                  <td>Container fill:active</td>
+                  <td>
+                    <Code>color-purple-200</Code>
+                  </td>
+                  <td>#e5d5f6</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>textDisabledBackgroundColor</Code>
+                  </td>
+                  <td>Container fill:disabled</td>
+                  <td>
+                    <Code>color-transparent</Code>
+                  </td>
+                  <td>transparent</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>textDisabledFontColor</Code>
+                  </td>
+                  <td>Label:disabled</td>
+                  <td>
+                    <Code>color-grey-401</Code>
+                  </td>
+                  <td>#595959</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>textFocusBorderColor</Code>
+                  </td>
+                  <td>Container border:focus</td>
+                  <td>
+                    <Code>color-blue-700</Code>
+                  </td>
+                  <td>#0086e6</td>
                 </tr>
               </DxcTable>
             ),
